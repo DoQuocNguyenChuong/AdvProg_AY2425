@@ -1,7 +1,7 @@
 #include <iostream>
 #include "hello.h"
 
-std::string printGameOver(){
+std::string printGameOver() { // ham in ra Game over
 	// TODO: Return the required string
-	return "";
+	return "Game over !";
 }
