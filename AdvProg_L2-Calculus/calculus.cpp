@@ -18,9 +18,28 @@ double mySqrt(double x);
     Returns:
         double: cosine of x
 ***/
-double myCos(double x) 
+double gt(int n){
+	double tich=1;
+	for(int i=1;i<=n;i++){
+		tich*=i;
+	}
+	return tich;
+}
+double mu(double x,int n){
+	double tich=1;
+	for(int i=0;i<n;i++){
+		tich*=x;
+	}
+	return tich;
+}
+double myCos(double x)
 {
-    return 0.0;
+    int n=100;
+    double cos=1;
+    for(int i=1;i<=n;i++){
+    	cos+=((mu(-1,i)/gt(2*i))*mu(x,2*i));
+	}
+	return cos;
 }
 
 /***
@@ -31,7 +50,12 @@ double myCos(double x)
 ***/
 double mySin(double x)
 {
-    return 0.0;
+    int n=100;
+    double sin=0;
+    for(int i=0;i<=n;i++){
+    	sin+=((mu(-1,i)/gt(2*i+1))*mu(x,2*i+1));
+	}
+	return sin;
 }
 
 
@@ -46,7 +70,10 @@ double mySqrt(double x) {
         cout << "Invalid argument" << endl;
         exit(1);
     }
-
-    
-    return 0;
+    double a=10,b=-20;
+    while(a!=(-b)){
+        b=0.5*(b+x/b);
+        a=0.5*(a+x/a);
+    }
+    return a;
 }
